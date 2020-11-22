@@ -98,6 +98,10 @@ void PointCloudToDepthImage::pcToImage(void)
 	}
 	/*convert*/
 	_img_cv_64f.convertTo(_img_cv_8u, CV_8UC1, 255/_max_range, 0);
+	/*save (test)*/
+	// std::string save_img8u_path = "/home/amsl/ozaki/test_pointcloud_to_depthimage.jpg";
+	// cv::imwrite(save_img8u_path, _img_cv_8u);
+	// std::cout << "saved: " << save_img8u_path << std::endl;
 }
 
 void PointCloudToDepthImage::publication(std_msgs::Header header)
